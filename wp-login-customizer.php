@@ -21,5 +21,9 @@
 
 //  Create Login Page Customizer Layout
 function wlc_handle_login_settings_layout(){
-
+    ob_start();
+    include_once plugin_dir_path(__FILE__) . "template/login_settings_layout.php";
+    $content = ob_get_contents();
+    ob_end_clean();
+    echo $content;
 }
