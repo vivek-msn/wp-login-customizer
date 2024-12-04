@@ -27,3 +27,28 @@ function wlc_handle_login_settings_layout(){
     ob_end_clean();
     echo $content;
 }
+
+// Register Settings for Login Page
+add_action( "admin_init", "wlc_login_page_settings_field_registration");
+
+function wlc_login_page_settings_field_registration(){
+
+    register_setting("wlc_login_settings_field_group", "wlc_login_page_text_color");
+
+    register_setting("wlc_login_settings_field_group", "wlc_login_page_background_color");
+
+    register_setting("wlc_login_settings_field_group", "wlc_login_page_logo");
+
+
+// Create a Section here and Add Settings Fields
+add_settings_section("wlc_login_page_section_id","Login Page Customizer Settings", null,"wp-login-page-customizer");
+
+add_settings_field("wlc_login_page_text_color","Page Text Color","wlc_login_page_text_color_layout","wp-login-page-customizer","wlc_login_page_section_id");
+}
+
+// Text Color Settings
+function wlc_login_page_text_color_layout(){
+    ?>
+    <input type="text" name="wlc_login_page_text_color" placeholder="Enter Login">
+    <?php
+}
