@@ -57,21 +57,24 @@ add_settings_field( "wlc_login_page_logo", "Login Page Logo", "wlc_login_page_lo
 
 // Text Color Settings
 function wlc_login_page_text_color_layout(){
+    $text_color = get_option("wlc_login_page_text_color");
     ?>
-    <input type="text" name="wlc_login_page_text_color" placeholder="Enter Login">
+    <input type="text" name="wlc_login_page_text_color" value="<?php echo $text_color?>" placeholder="Enter Login">
     <?php
 }
 
 // Background Color Settings
  function wlc_login_page_background_color_layout(){
+    $background_color = get_option("wlc_login_page_background_color");
     ?>
-    <input type="text" name="wlc_login_page_background_color" placeholder="Background Color">
+    <input type="text" name="wlc_login_page_background_color" value="<?php echo $background_color?>" placeholder="Background Color">
     <?php
  }
 
  // Change Logo Settings
  function wlc_login_page_logo_input(){
-    ?>
-    <input type="text" name="wlc_login_page_logo_input" placeholder="Enter Logo URL">
+    $background_logo = get_option("wlc_login_page_logo");
+    ?>    
+    <input type="text" name="wlc_login_page_logo" value="<?php echo $background_logo?>" placeholder="Enter Logo URL">
     <?php
  }
