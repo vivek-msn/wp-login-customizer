@@ -43,7 +43,16 @@ function wlc_login_page_settings_field_registration(){
 // Create a Section here and Add Settings Fields
 add_settings_section("wlc_login_page_section_id","Login Page Customizer Settings", null,"wp-login-page-customizer");
 
+// Text Color
 add_settings_field("wlc_login_page_text_color","Page Text Color","wlc_login_page_text_color_layout","wp-login-page-customizer","wlc_login_page_section_id");
+
+
+// Background Color
+add_settings_field( "wlc_login_page_background_color", "Page Background Color", "wlc_login_page_background_color_layout", "wp-login-page-customizer", "wlc_login_page_section_id");
+
+//Logo
+add_settings_field( "wlc_login_page_logo", "Login Page Logo", "wlc_login_page_logo_input", "wp-login-page-customizer","wlc_login_page_section_id");
+
 }
 
 // Text Color Settings
@@ -52,3 +61,17 @@ function wlc_login_page_text_color_layout(){
     <input type="text" name="wlc_login_page_text_color" placeholder="Enter Login">
     <?php
 }
+
+// Background Color Settings
+ function wlc_login_page_background_color_layout(){
+    ?>
+    <input type="text" name="wlc_login_page_background_color" placeholder="Background Color">
+    <?php
+ }
+
+ // Change Logo Settings
+ function wlc_login_page_logo_input(){
+    ?>
+    <input type="text" name="wlc_login_page_logo_input" placeholder="Enter Logo URL">
+    <?php
+ }
