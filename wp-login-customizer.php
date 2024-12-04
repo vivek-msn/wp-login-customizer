@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: WP Login Page Customizer
  * Description: This Plugin will customized Logo, Text Color, and Background Color
@@ -20,5 +21,5 @@
 
 //  Create Login Page Customizer Layout
 function wlc_handle_login_settings_layout(){
-    
+
 }
