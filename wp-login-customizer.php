@@ -57,7 +57,7 @@ add_settings_field( "wlc_login_page_logo", "Login Page Logo", "wlc_login_page_lo
 
 // Text Color Settings
 function wlc_login_page_text_color_layout(){
-    $text_color = get_option("wlc_login_page_text_color");
+    $text_color = get_option("wlc_login_page_text_color","");
     ?>
     <input type="text" name="wlc_login_page_text_color" value="<?php echo $text_color?>" placeholder="Enter Login">
     <?php
@@ -65,7 +65,7 @@ function wlc_login_page_text_color_layout(){
 
 // Background Color Settings
  function wlc_login_page_background_color_layout(){
-    $background_color = get_option("wlc_login_page_background_color");
+    $background_color = get_option("wlc_login_page_background_color","");
     ?>
     <input type="text" name="wlc_login_page_background_color" value="<?php echo $background_color?>" placeholder="Background Color">
     <?php
@@ -73,8 +73,32 @@ function wlc_login_page_text_color_layout(){
 
  // Change Logo Settings
  function wlc_login_page_logo_input(){
-    $background_logo = get_option("wlc_login_page_logo");
-    ?>    
+    $background_logo = get_option("wlc_login_page_logo","");
+    ?>
     <input type="text" name="wlc_login_page_logo" value="<?php echo $background_logo?>" placeholder="Enter Logo URL">
     <?php
+ }
+
+ //Render Custom Login Page Settings to Login Screen
+ add_action("login_enqueue_scripts","wlc_login_page_customizer_settings");
+
+ function wlc_login_page_customizer_settings(){
+
+   $text_color = get_option("wlc_login_page_text_color","");
+   $bg_color = get_option("wlc_login_page_background_color","");
+   $page_logo = get_option("wlc_login_page_logo","");
+
+   ?>
+   <style>
+      <?php
+      if( !empty($text_color)){
+         ?>
+         div#login{
+            color: <?php echo $text_color; ?>;
+         }
+         <?php
+      }
+      ?>
+   </style>
+   <?php
  }
