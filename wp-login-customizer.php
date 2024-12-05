@@ -110,6 +110,15 @@ function wlc_login_page_text_color_layout(){
          <?php
       }
       ?>
+      <?php
+      if(!empty($page_logo)){
+         ?>
+         #login a{
+            background-image: url(<?php echo $page_logo; ?>) !important;
+         }
+         <?php
+         }
+      ?>
    </style>
    <?php
  }
