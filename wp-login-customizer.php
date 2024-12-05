@@ -93,8 +93,10 @@ function wlc_login_page_text_color_layout(){
       <?php
       if( !empty($text_color)){
          ?>
-         div#login{
-            color: <?php echo $text_color; ?>;
+         div#login,
+         a.wp-login-lost-password,
+         p#backtoblog a{
+            color: <?php echo $text_color; ?> !important;
          }
          <?php
       }
