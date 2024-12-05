@@ -101,6 +101,15 @@ function wlc_login_page_text_color_layout(){
          <?php
       }
       ?>
+      <?php
+      if(!empty($bg_color)){
+         ?>
+         body.login{
+            background: <?php echo $bg_color; ?> !important;
+         }
+         <?php
+      }
+      ?>
    </style>
    <?php
  }
