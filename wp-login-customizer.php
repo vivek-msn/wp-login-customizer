@@ -46,7 +46,6 @@ add_settings_section("wlc_login_page_section_id","Login Page Customizer Settings
 // Text Color
 add_settings_field("wlc_login_page_text_color","Page Text Color","wlc_login_page_text_color_layout","wp-login-page-customizer","wlc_login_page_section_id");
 
-
 // Background Color
 add_settings_field( "wlc_login_page_background_color", "Page Background Color", "wlc_login_page_background_color_layout", "wp-login-page-customizer", "wlc_login_page_section_id");
 
